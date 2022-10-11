@@ -8,10 +8,11 @@
 */
 
 class Tamagachi {
-    constructor(info) {
+    constructor({hp, name, view}) {
         //жизнь и перевод в число
-        this.health = info.hp;
-        this.name = info.name;
+        this.health = hp;
+        this.name = name;
+        this.view = view;
         this.bone = '<img src="./img/game_skull_head_skull_dead_die_death_icon_133746.png" alt="" class="content__item-img">';
         this.cemetry = '<img src="./img/death_covid_coronavirus_dead_die_graveyard_tomb_icon_143389.png" alt="" class="content__item-img">';
 
@@ -28,7 +29,7 @@ class Tamagachi {
         //фото, класс, передача изображения, добавление
         this.imgBox = document.createElement('div');
         this.imgBox.className = 'content__item-img-box';
-        this.imgBox.innerHTML = info.view;
+        this.imgBox.innerHTML = this.view;
         this.item.append(this.imgBox);
 
         //статус: создание, класс, добавление
